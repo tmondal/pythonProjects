@@ -1,0 +1,21 @@
+bif="back.jpg"
+pif="images.jpg"
+import pygame,sys
+from pygame.locals import 
+
+pygame.init()
+screen = pygame.display.set_mode((640,480),0,32)
+background = pygame.image.load(bif).convert()
+player = pygame.image.load(pif).convert_alpha()
+position = player.get_rect()
+
+while True:
+    for event in pygame.event.get():
+       if event.type == pygame.QUIT:
+           pygame.quit()
+           sys.exit()
+        
+    screen.blit(background,(0,0))
+    screen.blit(player,(position))
+    
+    pygame.display.update()
